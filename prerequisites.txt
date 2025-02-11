@@ -1,0 +1,6 @@
+mkdocs-material
+mkdocs-roamlinks-plugin
+
+# after some version this is already built-in into above mentioned
+mkdocs-material-extensions
+pymdown-extensions

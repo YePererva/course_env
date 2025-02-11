@@ -1,0 +1,108 @@
+site_name: Course handouts
+site_description: "Template for course"
+
+site_url: https://sitename.example
+theme:
+  name: material
+
+  font: 
+    text: Roboto Flex
+    code: Red Hat Mono
+
+  icon: 
+    logo: octicons/rocket-24
+ 
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: teal
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+      primary: teal
+  
+  custom_dir: overrides
+  
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.footer
+
+plugins:
+  - search
+  - roamlinks
+  - offline
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+      
+  # for rendering tables
+  - tables
+  # for code syntax highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # for MathJax support
+  - pymdownx.arithmatex:
+      generic: true
+  # for diagramming
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # for callouts / warnings
+  - admonition
+  - pymdownx.details
+  - footnotes
+  # for tabbed content
+  - pymdownx.tabbed:
+      combine_header_slug: true
+      alternate_style: true
+
+  # for rendering emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  generator: false
+
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://<your_youtube_channel>
+    - icon: fontawesome/brands/linkedin
+      link: https://<your_linkedin_profile>
+    - icon: fontawesome/brands/github
+      link: https://<your_github_profile>
+    - icon: fontawesome/solid/envelope
+      link: mailto:<email-address>
+    - icon: fontawesome/solid/phone
+      link: tel:<your-phone-number>
+
+copyright: Copyright &copy; 2025 Author
