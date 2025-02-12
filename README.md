@@ -1,3 +1,3 @@
 # course_src
 
-https://yepererva.github.io/course_env/
+https://yepererva.github.io/course_site/
