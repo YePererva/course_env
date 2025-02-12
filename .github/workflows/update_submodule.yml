@@ -67,3 +67,15 @@ jobs:
             python -m pip install --upgrade pip
             python -m pip install -r prerequisites.txt 
         - run: mkdocs build
+
+        - name: Push to documentation repository
+          run: |
+            cd site
+            git init
+            git add -A
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git commit -m "Update documentation"
+            git branch -M main
+            git remote add origin https://x-access-token:${{ secrets.DOCS_DEPLOY_TOKEN }}@github.com/YePererva/course_site.git
+            git push -f origin main
