@@ -1,0 +1,38 @@
+name: Update Submodule
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PAT_TOKEN }}
+          
+      - name: Git config
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Update submodule
+        run: |
+          cd docs
+          git checkout main
+          git pull origin main
+          cd ..
+          git add docs
+          
+      - name: Commit and push if changed
+        run: |
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update docs submodule to latest main"
+            git push
+          fi
