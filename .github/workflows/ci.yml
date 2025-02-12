@@ -18,8 +18,9 @@ jobs:
         run: |
           git config user.name ${{ secrets.USER_NAME }}
           git config user.email ${{ secrets.USER_EMAIL }}
-          git submodule update --init --recursive
-          git submodule update --recursive --remote
+          # git submodule update --init --recursive
+          # git submodule update --recursive --remote
+          git submodule foreach git pull origin main
           git commit -am "Update submodules"
           git push
 
