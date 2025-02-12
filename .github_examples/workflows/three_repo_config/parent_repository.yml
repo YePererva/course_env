@@ -56,9 +56,6 @@ jobs:
         - uses: actions/setup-python@v5
           with:
             python-version: 3.x
-        - uses: actions-for-kicad/setup-kicad@v1
-          with:
-            version: "8.0"
         - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
         - uses: actions/cache@v4
           with:
