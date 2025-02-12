@@ -1,6 +1,8 @@
 name: ci 
 on:
+  # Allows you to run this workflow manually from the Actions tab or through HTTP API
   workflow_dispatch:
+  
   push:
     branches:
       - main
@@ -8,24 +10,7 @@ on:
 
 permissions:
   contents: write
-
 jobs:
-  update_submodule:
-    runs-on: ubuntu-latest
-    steps:
-      - name: check out repository
-      - uses: actions/checkout@v4
-        with:
-          submodules: true # Make sure to check out the sub-module
-        run: |
-          git config user.name ${{ secrets.USER_NAME }}
-          git config user.email ${{ secrets.USER_EMAIL }}
-          # git submodule update --init --recursive
-          # git submodule update --recursive --remote
-          git submodule foreach git pull origin main
-          git commit -am "Update submodules"
-          git push
-
   deploy:
     runs-on: ubuntu-latest
     steps:
