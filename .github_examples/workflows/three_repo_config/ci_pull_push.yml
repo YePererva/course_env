@@ -80,5 +80,5 @@ jobs:
             git config user.email 41898282+github-actions[bot]@users.noreply.github.com
             git commit -m "Update documentation"
             git branch -M main
-            git remote add origin https://x-access-token:${{ secrets.DOCS_DEPLOY_TOKEN }}@github.com/YePererva/course_site.git
+            git remote add origin https://x-access-token:${{ secrets.DOCS_DEPLOY_TOKEN }}@github.com/your_repository/course_site.git
             git push -f origin main
