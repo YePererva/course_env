@@ -43,7 +43,10 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
-    - navigation.footer
+    #- navigation.footer
+    #- navigation.path # fors for sponsors only
+    - navigation.indexes
+    - toc.follow
 
 plugins:
   - search
@@ -51,9 +54,11 @@ plugins:
   - offline
 
 markdown_extensions:
+  - meta
   - attr_list
   - toc:
       permalink: true
+      separator: "_"
       
   # for rendering tables
   - tables
@@ -74,7 +79,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   # for callouts / warnings
-  - admonition
+  - admonition # sometimes suggested to be replaced by "pymdownx.blocks.admonition" by replacement doesn't work well!
   - pymdownx.details
   - footnotes
   # for tabbed content
@@ -86,6 +91,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # - markdown_include.include
   
 
 extra_javascript:
