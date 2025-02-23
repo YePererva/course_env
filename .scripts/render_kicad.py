@@ -71,9 +71,3 @@ if __name__ == "__main__":
 				kicad_to_svg(target_folder, src_file)
 				logger.info(f"Post-processing file :\n\t{render_file}")
 				postprocess_svg(render_file)
-
-
-
-
-	
-

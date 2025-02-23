@@ -50,6 +50,10 @@ theme:
 
 plugins:
   - search
+  # - git-revision-date
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
   - roamlinks
   - offline
 
