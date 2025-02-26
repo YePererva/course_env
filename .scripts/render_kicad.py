@@ -3,6 +3,8 @@ import logging
 import re
 import platform
 
+import svg_compressor
+
 from local_repo import project_root_folder, content_folder, src_folder_postfix, target_folder_postfix
 
 
@@ -71,3 +73,5 @@ if __name__ == "__main__":
 				kicad_to_svg(target_folder, src_file)
 				logger.info(f"Post-processing file :\n\t{render_file}")
 				postprocess_svg(render_file)
+				logger.info(f"Compressing file :\n\t{render_file}")
+				svg_compressor.compress_svg(render_file)

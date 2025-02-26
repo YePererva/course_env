@@ -7,6 +7,8 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
+logger = logging.getLogger('svg_compressor')
+
 def compress_svg(input_file, output_file=None):
 
     options = scour.generateDefaultOptions()
@@ -40,7 +42,7 @@ def compress_svg(input_file, output_file=None):
     reduction_delta = (original_size - len(compressed_svg))
     reduction_ratio = reduction_delta / original_size * 100
 
-    logger.info(f"Space saving: {reduction_delta} bytes, {reduction_ratio:.2f}%")
+    logger.info(f"Space saving:\n\t {reduction_delta} bytes, {reduction_ratio:.2f}%")
     
     # Determine output path
     if output_file is None:
@@ -50,5 +52,3 @@ def compress_svg(input_file, output_file=None):
     # Write the compressed SVG
     with open(output_file, 'w') as f:
         f.write(compressed_svg)
-    
-        logger.info(f"Compressed size: {compressed_size:,} bytes")

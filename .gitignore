@@ -169,8 +169,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-docs/.obsidian/bookmarks.json
-docs/.obsidian/workspace.json
 
-.obsidian/workspace.json
-.obsidian/bookmarks.json
+**/.obsidian/
+**/.obsidian
+
+!**/.obsidian/app.json
+!**/.obsidian/core-plugins.json
