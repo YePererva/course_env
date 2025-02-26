@@ -1,5 +1,8 @@
-site_name: Course handouts
-site_description: "Template for course"
+site_name: Course environment
+site_description: "Template for course suplementary materials"
+
+repo_url: https://github.com/YePererva/course_env
+repo_name: YePererva/course_env
 
 docs_dir: docs/content
 
@@ -13,6 +16,7 @@ theme:
 
   icon: 
     logo: octicons/rocket-24
+    repo: fontawesome/brands/github
  
   palette:
 
