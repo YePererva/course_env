@@ -63,7 +63,9 @@ markdown_extensions:
   - toc:
       permalink: true
       separator: "_"
-      
+  # for tasklists
+  - pymdownx.tasklist
+   
   # for rendering tables
   - tables
   # for code syntax highlight
