@@ -4,5 +4,5 @@
   "strictLineBreaks": true,
   "showLineNumber": true,
   "alwaysUpdateLinks": true,
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "relative"
 }
