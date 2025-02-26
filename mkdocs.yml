@@ -50,11 +50,11 @@ theme:
 
 plugins:
   - search
-  # - git-revision-date
+  - ezlinks
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
-  - roamlinks
+  #- roamlinks
   - offline
 
 markdown_extensions:

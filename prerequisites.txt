@@ -1,9 +1,19 @@
 mkdocs-material
-mkdocs-roamlinks-plugin
+
+# SVG parser / optimizer
+scour
+
+# roamlinks parser
+mkdocs-ezlinks-plugin 
+
+
+# These plugins didnt worked fro roamlinks
+# mkdocs-roamlinks-with-pdf-plugin
+# mkdocs-roamlinks-plugin
+
 
 # for including sub-files
 markdown-include
-#mkdocs-git-revision-date-plugin
 mkdocs-git-revision-date-localized-plugin
 
 # after some version this is already built-in into above mentioned
