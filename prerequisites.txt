@@ -3,8 +3,12 @@ mkdocs-material
 # SVG parser / optimizer
 scour
 
+# for image compression
+pillow
+
 # roamlinks parser
 mkdocs-ezlinks-plugin 
+markdown-meta-extension
 
 
 # These plugins didnt worked fro roamlinks

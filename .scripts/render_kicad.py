@@ -33,7 +33,7 @@ replacements = [
 def kicad_to_svg(target_folder, src_file):
 	subprocess.call([kicad_cli,'sch','export','svg','--output', target_folder,'--exclude-drawing-sheet', '--no-background-color', src_file])
 
-def postprocess_svg (render_file_name):
+def crop_svg (render_file_name):
 	# cropping according to content without fields
 	subprocess.call([inkscape,'--export-plain-svg','--export-text-to-path','--export-area-drawing','--export-background-opacity=255', '--export-overwrite', render_file_name])
 
@@ -72,6 +72,6 @@ if __name__ == "__main__":
 				logger.info(f"Exporting schematics:\n\t{src_file}")
 				kicad_to_svg(target_folder, src_file)
 				logger.info(f"Post-processing file :\n\t{render_file}")
-				postprocess_svg(render_file)
+				crop_svg(render_file)
 				logger.info(f"Compressing file :\n\t{render_file}")
 				svg_compressor.compress_svg(render_file)

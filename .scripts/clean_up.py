@@ -1,9 +1,3 @@
-'''
-# Kicad Project Files. Keeping only schematics and custom symbols
-Get-ChildItem -Path "$ProjectFolder" -Recurse -File -include *.kicad_pro, *.pro, *.kicad-pcb, *.kicad_prl  | Remove-Item
-
-'''
-
 import os, sys
 import logging
 import re
