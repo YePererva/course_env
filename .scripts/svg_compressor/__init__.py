@@ -9,36 +9,30 @@ logging.basicConfig(
 
 logger = logging.getLogger('svg_compressor')
 
-def compress_svg(input_file, output_file=None):
+kicad_compression_options = scour.generateDefaultOptions()
 
-    options = scour.generateDefaultOptions()
-    
-    # High compression settings
-    options.strip_comments = True
-    options.strip_xml_prolog = True
-    options.remove_metadata = True
-    options.enable_viewboxing = True
-    options.indent_type = 'none'
-    #options.digits = 3
-    options.simplify_colors = True
-    options.remove_descriptive_elements = True
-    options.strip_ids = True
-    options.shorten_ids = True
-    options.enable_id_stripping = True
-    options.newlines = False
-    
-    # Read the input file
+kicad_compression_options.strip_comments = True
+kicad_compression_options.strip_xml_prolog = True
+kicad_compression_options.remove_metadata = True
+kicad_compression_options.enable_viewboxing = True
+kicad_compression_options.indent_type = 'none'
+kicad_compression_options.simplify_colors = True
+kicad_compression_options.remove_descriptive_elements = True
+kicad_compression_options.strip_ids = True
+kicad_compression_options.shorten_ids = True
+kicad_compression_options.enable_id_stripping = True
+kicad_compression_options.newlines = False
+
+
+def compress_svg(input_file, output_file=None):
+  
     with open(input_file, 'r') as f:
         svg_raw_data = f.read()
-    
-    # Get original file size
-    original_size = len(svg_raw_data)
-    
-    # Compress the SVG
-    compressed_svg = scour.scourString(svg_raw_data, options)
-    
+
+    compressed_svg = scour.scourString(svg_raw_data, kicad_compression_options)
     
     # Calculate size reduction percentage
+    original_size = len(svg_raw_data)
     reduction_delta = (original_size - len(compressed_svg))
     reduction_ratio = reduction_delta / original_size * 100
 
