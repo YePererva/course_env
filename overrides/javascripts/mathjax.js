@@ -1,3 +1,9 @@
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+  }
+});
+
 window.MathJax = {
     tex: {
       inlineMath: [["\\(", "\\)"]],
